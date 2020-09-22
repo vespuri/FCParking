@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FCPark.API", "FCPark.API\FCPark.API.csproj", "{EE7074F2-4548-4D0D-83E1-936FA4724578}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FCPark.Security", "FCPark.Security\FCPark.Security.csproj", "{5039826E-7434-41AB-BCA0-FD64835C608B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FCPark.DAL", "FCPark.DAL\FCPark.DAL.csproj", "{723AA3C1-26FE-4C4D-B217-2BB4B58B7104}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FCPark.Services", "FCPark.Services\FCPark.Services.csproj", "{2D93CCE6-84B0-42B8-AC6E-24CDBD4A3C4D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FCPark.Core", "FCPark.Core\FCPark.Core.csproj", "{50E88AB1-3A5D-4E23-A42F-C0121D0721ED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitFCParkTest", "XUnitFCParkTest\XUnitFCParkTest.csproj", "{66E58C20-6D42-4169-BF62-BDE0BA531FB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE7074F2-4548-4D0D-83E1-936FA4724578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE7074F2-4548-4D0D-83E1-936FA4724578}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE7074F2-4548-4D0D-83E1-936FA4724578}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE7074F2-4548-4D0D-83E1-936FA4724578}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5039826E-7434-41AB-BCA0-FD64835C608B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5039826E-7434-41AB-BCA0-FD64835C608B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5039826E-7434-41AB-BCA0-FD64835C608B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5039826E-7434-41AB-BCA0-FD64835C608B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{723AA3C1-26FE-4C4D-B217-2BB4B58B7104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{723AA3C1-26FE-4C4D-B217-2BB4B58B7104}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{723AA3C1-26FE-4C4D-B217-2BB4B58B7104}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{723AA3C1-26FE-4C4D-B217-2BB4B58B7104}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D93CCE6-84B0-42B8-AC6E-24CDBD4A3C4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D93CCE6-84B0-42B8-AC6E-24CDBD4A3C4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D93CCE6-84B0-42B8-AC6E-24CDBD4A3C4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D93CCE6-84B0-42B8-AC6E-24CDBD4A3C4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50E88AB1-3A5D-4E23-A42F-C0121D0721ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50E88AB1-3A5D-4E23-A42F-C0121D0721ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50E88AB1-3A5D-4E23-A42F-C0121D0721ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50E88AB1-3A5D-4E23-A42F-C0121D0721ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66E58C20-6D42-4169-BF62-BDE0BA531FB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66E58C20-6D42-4169-BF62-BDE0BA531FB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66E58C20-6D42-4169-BF62-BDE0BA531FB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66E58C20-6D42-4169-BF62-BDE0BA531FB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B42679D4-FB0A-425A-B76B-6D55ED04626C}
+	EndGlobalSection
+EndGlobal
