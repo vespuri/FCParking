@@ -17,6 +17,7 @@ namespace FCPark.API.Mapping
             CreateMap<Veiculo, VeiculoResource>();
             CreateMap<Estabelecimento, EstabelecimentoResource>();
             CreateMap<MovimentacaoVeiculo, MovimentacaoVeiculoResource>();
+            CreateMap<Cliente, ClienteResource>();
 
             // Resource to Domain
             CreateMap<SaveVeiculoResource, Veiculo>();
@@ -28,6 +29,9 @@ namespace FCPark.API.Mapping
 
             CreateMap<SaveMovimentacaoVeiculoResource, MovimentacaoVeiculo>();
             CreateMap<MovimentacaoVeiculoResource, MovimentacaoVeiculo>();
+
+            CreateMap<SaveClienteResource, Cliente>();
+            CreateMap<ClienteResource, Cliente>();
 
         }
         

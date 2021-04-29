@@ -50,6 +50,7 @@ namespace FCPark.API
             services.AddTransient<IVeiculoService, VeiculoService>();
             services.AddTransient<IEstabelecimentoService, EstabelecimentoService>();
             services.AddTransient<IMovimentacaoVeiculoService, MovimentacaoVeiculoService>();
+            services.AddTransient<IClienteService, ClienteService>();
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<IdentityDbContext>()
