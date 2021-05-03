@@ -19,7 +19,11 @@
     <ProjectReference Include="..\FCPark.Core\FCPark.Core.csproj" />
     <ProjectReference Include="..\FCPark.DAL\FCPark.DAL.csproj" />
     <ProjectReference Include="..\FCPark.Services\FCPark.Services.csproj" />
-    <ProjectReference Include="..\IdentityDBLocal\FCPark.API.csproj" />
+    <ProjectReference Include="..\FCPark.API\FCPark.API.csproj" />
   </ItemGroup>
+  
+
+  
+
 
 </Project>
