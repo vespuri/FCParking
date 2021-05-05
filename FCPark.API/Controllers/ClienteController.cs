@@ -39,6 +39,23 @@ namespace FCPark.API.Controllers
             return Ok(clientesResources);
         }
 
+        /// <summary>
+        /// Buscar um Cliente pelo ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Retorna uma entidade Cliente pelo parametro ID</returns>
+        /// <response code="200">Retorna o cliente de acordo com o ID.</response>
+         
+        [HttpGet("{id}/retorno.{format}"), FormatFilter]
+        public async Task<ActionResult<ClienteResource>> GetClienteById(int id)
+        {
+            var cliente = await _clienteService.GetClienteById(id);
+            var clienteResource = _mapper.Map<Cliente, ClienteResource>(cliente);
+
+            return Ok(clienteResource);
+        }
+
+
         // POST api/Cliente
         /// <summary>
         /// Criar um novo Cliente
