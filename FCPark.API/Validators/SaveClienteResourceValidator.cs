@@ -21,7 +21,12 @@ namespace FCPark.API.Validators
                 .NotEmpty()
                 .NotNull()
                 .MaximumLength(25);
-            
+
+            RuleFor(a => a.CPF)
+               .NotEmpty()
+               .NotNull()
+               .MaximumLength(25);
+
         }
     }
 }

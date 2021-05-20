@@ -12,10 +12,13 @@ namespace FCPark.Core
         Task RegistrarSaidaVeiculo(MovimentacaoVeiculo movimentoVeiculoToBeUpdated, MovimentacaoVeiculo saveMovimentacaoVeiculoResource);
 
         Task<MovimentacaoVeiculo> GetMovimentacaoPorPlaca(string placa);
+        Task<MovimentacaoVeiculo> GetMovimentacaoPorCPF(string CPF);
+
         Task<List<TotalsReport>> GetMovimentacaoEntradaDiaHora(DateTime prData);
         Task<List<TotalsReport>> GetMovimentacaoSaidaDiaHora(DateTime prData);
 
         Task<List<TotalsReport>> GetTotalEntradaSaidaDia(DateTime prData);
+
 
     }
 }

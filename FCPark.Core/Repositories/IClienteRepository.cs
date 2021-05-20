@@ -7,6 +7,7 @@ namespace FCPark.Core
 {
     public interface IClienteRepository : IRepository<Cliente>
     {
-      
+        Task<Cliente> GetClientePorCPF(string prCPF);
+
     }
 }

@@ -12,6 +12,8 @@ namespace FCPark.API.Validators
                 .NotNull();
             RuleFor(a => a.EstabelecimentoId)
                 .NotNull();
+            RuleFor(a => a.ClienteId)
+                .NotNull();
 
         }
     }

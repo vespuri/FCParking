@@ -45,6 +45,7 @@ namespace FCPark.Services
             clienteToBeUpdated.Nome = cliente.Nome;
             clienteToBeUpdated.Telefone = cliente.Telefone;
             clienteToBeUpdated.Endereco = cliente.Endereco;
+            clienteToBeUpdated.CPF = cliente.CPF;
 
             await _unitOfWork.CommitAsync();
         }

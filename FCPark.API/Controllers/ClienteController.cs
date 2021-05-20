@@ -11,7 +11,7 @@ using FluentValidation;
 namespace FCPark.API.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize("Bearer")]
+  //  [Authorize("Bearer")]
     [ApiController]
     public class ClienteController : ControllerBase
     {
@@ -69,6 +69,7 @@ namespace FCPark.API.Controllers
         ///        "nome": "Jade",
         ///        "endereco": "Rua das Hortências",
         ///        "telefone": "1335675869",
+        ///        "CPF": "48111799861",
         ///       
         ///      }
         ///
@@ -91,6 +92,7 @@ namespace FCPark.API.Controllers
         ///        "nome": "Jade",
         ///        "endereco": "Rua das Hortências",
         ///        "telefone": "1335675869",
+        ///        "cpf": "48111799861"
         ///      }
         ///
         /// </remarks>
@@ -106,7 +108,7 @@ namespace FCPark.API.Controllers
             var validator = new SaveClienteResourceValidator();
             var validationResult = await validator.ValidateAsync(saveClienteResource);
 
-            if (!validationResult.IsValid)
+             if (!validationResult.IsValid)
                 return BadRequest(validationResult.Errors);
 
             var clienteToCreate = _mapper.Map<SaveClienteResource, Cliente>(saveClienteResource);
@@ -130,8 +132,8 @@ namespace FCPark.API.Controllers
         ///        "nome": "Jade",
         ///        "endereco": "Rua das Hortências",
         ///        "telefone": "1335675869",
+        ///        "CPF": "48111799861",
         ///      }
-        ///
         /// </remarks>
         /// <param name="saveClienteResource"></param>
         /// <param name="id"></param>
@@ -176,6 +178,7 @@ namespace FCPark.API.Controllers
         ///        "nome": "Jade",
         ///        "endereco": "Rua das Hortências",
         ///        "telefone": "1335675869",
+        ///        "CPF": "48111799861",
         ///     }
         ///
         /// </remarks>

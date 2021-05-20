@@ -8,10 +8,16 @@ namespace FCPark.DAL
     {
         public ClienteRepository(FCParkDbContext context)
         : base(context)
+        { }
+        public Task<Cliente> GetClientePorCPF(string prCPF)
         {
-
+            return FCParkDbContext.Clientes
+                .SingleOrDefaultAsync(a => a.CPF == prCPF);
         }
 
-    
+        private FCParkDbContext FCParkDbContext
+        {
+            get { return _context as FCParkDbContext; }
+        }
     }
 }

@@ -19,6 +19,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
+
+
 namespace FCPark.API
 {
     public class Startup
@@ -41,10 +43,10 @@ namespace FCPark.API
             });
 
             services.AddDbContext<IdentityDbContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("BaseIdentity")));
+                    options.UseMySql(Configuration.GetConnectionString("BaseIdentity")));
 
             services.AddDbContext<FCParkDbContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("App")));
+                    options.UseMySql(Configuration.GetConnectionString("App")));
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IVeiculoService, VeiculoService>();

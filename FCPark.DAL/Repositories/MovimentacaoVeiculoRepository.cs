@@ -24,7 +24,19 @@ namespace FCPark.DAL.Repositories
 
             return mVeiculoResult.FirstOrDefaultAsync();
         }
+        public Task<MovimentacaoVeiculo> GetMovimentacaoPorCPF(string prCPF)
+        {
+            var mVeiculoResult = from mveiculo in FCParkDbContext.MovimentacaoVeiculos
+                                 join veiculo in FCParkDbContext.Veiculos
+                                 on mveiculo.VeiculoId equals veiculo.Id
+                                 join cliente in FCParkDbContext.Clientes
+                                 on mveiculo.ClienteId equals cliente.Id
+                                 where cliente.CPF == prCPF
+                                 select mveiculo;
 
+
+            return mVeiculoResult.FirstOrDefaultAsync();
+        }
         public Task<MovimentacaoVeiculo> GetMovimentacaoPlacaHoje(string prPlaca)
         {
 

@@ -26,7 +26,10 @@ namespace FCPark.DAL
                 .Property(m => m.Telefone)
                 .IsRequired()
                 .HasMaxLength(25);
-
+            builder
+               .Property(m => m.CPF)
+               .IsRequired()
+               .HasMaxLength(25);
         }
     }
 }
