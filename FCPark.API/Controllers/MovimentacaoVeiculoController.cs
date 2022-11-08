@@ -13,20 +13,23 @@ using Microsoft.AspNetCore.Mvc;
 namespace FCPark.API.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize("Bearer")]
+   // [Authorize("Bearer")]
     [ApiController]
     public class MovimentacaoVeiculoController : Controller
     {
         private readonly IMovimentacaoVeiculoService _movimentacaoVeiculoService;
         private readonly IVeiculoService _veiculoService;
+        private readonly IClienteService _clienteService;
         private readonly IMapper _mapper;
 
         public MovimentacaoVeiculoController(IMovimentacaoVeiculoService movimentacaoVeiculoService,
-            IVeiculoService veiculoService, IMapper mapper)
+            IVeiculoService veiculoService, IClienteService clienteService, IMapper mapper)
+             
         {
             this._mapper = mapper;
             this._movimentacaoVeiculoService = movimentacaoVeiculoService;
             this._veiculoService = veiculoService;
+            this._clienteService = clienteService;
         }
 
         // GET api/Veiculo
@@ -56,6 +59,7 @@ namespace FCPark.API.Controllers
         ///       "id": 0,
         ///       "veiculoId": 1,
         ///       "estabelecimentoId": 1,
+        ///       "clienteId": 1,
         ///       "dataEntrada": "2020-09-21T09:57:27",
         ///       "dataSaida": null
         ///     }
@@ -76,6 +80,18 @@ namespace FCPark.API.Controllers
             if (movimentacaoExistente != null)
             {
                 ValidationFailure failure = new ValidationFailure("dataSaida", String.Format("Saída Pendente para o Veículo de placa {0}", veiculo.Placa));
+                validationResult.Errors.Add(failure);
+            }
+
+            if (!validationResult.IsValid)
+                return BadRequest(validationResult.Errors);
+
+            var cliente = await _clienteService.GetClienteById(saveMovimentacaoVeiculoResource.ClienteId);
+            var movimentacaoVeiculoCliente = await _movimentacaoVeiculoService.GetMovimentacaoPorCPF(cliente.CPF);
+
+            if (movimentacaoExistente != null)
+            {
+                ValidationFailure failure = new ValidationFailure("dataSaida", String.Format("Saída Pendente para o CPF {0}", cliente.CPF));
                 validationResult.Errors.Add(failure);
             }
 
@@ -104,6 +120,7 @@ namespace FCPark.API.Controllers
         ///       "id": 1,
         ///       "veiculoId": 1,
         ///       "estabelecimentoId": 1,
+        ///       "clienteId": 1,
         ///       "dataEntrada": "2020-09-21T09:57:27",
         ///       "dataSaida": "2020-09-21T11:30:00"
         ///     }

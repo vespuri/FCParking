@@ -10,6 +10,7 @@ namespace FCPark.Core
         public int Hora { get; set; }
         public int Total { get; set; }
         public string Movimento { get; set; }
+        public string CPF { get; set; }
 
         public int TotalSaida {get;set;}
         public int TotalEntrada { get; set; }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace FCPark.API.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize("Bearer")]
+ //   [Authorize("Bearer")]
     [ApiController]
     public class RelatorioController : ControllerBase
     {
@@ -60,5 +60,7 @@ namespace FCPark.API.Controllers
 
             return Ok(movimentos);
         }
+
+
     }
 }

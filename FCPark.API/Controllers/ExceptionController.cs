@@ -24,7 +24,7 @@ namespace FCPark.API.Controllers
                 //Log in a flat fire or other storage
                 Log.Error(ex, path);
 
-                var error = new { ErrorMessage = ex.Message, ErrorPath = path };
+                var error = new { ErrorMessage = $"Mensagem: {ex.Message} Exception: {ex.InnerException}", ErrorPath = path };
 
                 return BadRequest(error);
 

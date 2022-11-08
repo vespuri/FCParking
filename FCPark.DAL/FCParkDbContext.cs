@@ -10,6 +10,8 @@ namespace FCPark.DAL
         public DbSet<Veiculo> Veiculos { get; set; }
         public DbSet<Estabelecimento> Estabelecimentos { get; set; }
         public DbSet<MovimentacaoVeiculo> MovimentacaoVeiculos { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
+
         public FCParkDbContext(DbContextOptions<FCParkDbContext> options)
             : base(options)
         {
@@ -20,6 +22,9 @@ namespace FCPark.DAL
         {
             modelBuilder
                 .ApplyConfiguration(new VeiculoConfiguration());
+
+            modelBuilder
+               .ApplyConfiguration(new ClienteConfiguration());
 
             modelBuilder
                 .ApplyConfiguration(new EstabelecimentoConfiguration());

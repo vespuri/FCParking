@@ -18,6 +18,9 @@ namespace FCPark.DAL
             builder
                 .Property(l => l.EstabelecimentoId)
                 .IsRequired();
+            builder
+                .Property(l => l.ClienteId)
+                .IsRequired();
         }
             
     }

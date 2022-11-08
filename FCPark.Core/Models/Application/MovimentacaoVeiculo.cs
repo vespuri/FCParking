@@ -12,6 +12,8 @@ namespace FCPark.Core
 
         public int EstabelecimentoId { get; set; }
 
+        public int ClienteId { get; set; }
+
         public DateTime? DataEntrada { get; set; }
         public DateTime? DataSaida { get; set; }
     }

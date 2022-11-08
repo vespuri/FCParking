@@ -14,7 +14,7 @@ namespace FCPark.API.Controllers
 {
 
     [Route("api/[controller]")]
-    [Authorize("Bearer")]
+    //[Authorize("Bearer")]
 
     [ApiController]
     public class VeiculoController : ControllerBase

@@ -11,6 +11,9 @@ namespace FCPark.Core
         IEstabelecimentoRepository Estabelecimentos { get; }
 
         IMovimentacaoVeiculoRepository MovimentacaoVeiculos { get; }
+
+        IClienteRepository  Clientes { get;  }
+
         Task<int> CommitAsync();
     }
 }

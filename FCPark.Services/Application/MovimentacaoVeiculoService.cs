@@ -38,7 +38,10 @@ namespace FCPark.Services
         {
             return await _unitOfWork.MovimentacaoVeiculos.GetMovimentacaoPlacaHoje(placa);
         }
-
+        public async Task<MovimentacaoVeiculo> GetMovimentacaoPorCPF(string CPF)
+        {
+            return await _unitOfWork.MovimentacaoVeiculos.GetMovimentacaoPlacaHoje(CPF);
+        }
         public async Task<IEnumerable<MovimentacaoVeiculo>> GetAllMovimentacaoVeiculos()
         {
             return await _unitOfWork.MovimentacaoVeiculos.GetAllAsync();
@@ -62,5 +65,8 @@ namespace FCPark.Services
         {
             return await _unitOfWork.MovimentacaoVeiculos.GetTotalEntradaSaidaDia(prData);
         }
+
+
+
     }
 }
