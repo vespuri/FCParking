@@ -1,45 +1,36 @@
 # FCParking
 
-Demonstração de REST API simulando um controle básico de estacionamento.
+Demonstration of a REST API simulating basic parking control.
 
-## Objetivo do Projeto
+## Project Objective
 
-Esse projeto tem por objetivo demonstrar e exemplificar uma API REST em .net Core
+This project aims to demonstrate and exemplify a REST API in .NET Core.
 
-### Tecnologias Utilizadas nesse Projeto
+### Technologies Used
 
-.NET CORE 3.1
+- .NET CORE 3.1
+- SQL SERVER
+- REDIS for token storage in Cache
+- JWT Authentication
+- XUnit for Unit Testing (2 tests for demonstration)
+- Moq for object mocking
+- Serilog for application logging
+- Swashbuckle Swagger for API exposure
 
-SQL SERVER
+### Running the Project
 
-REDIS para armazenamento de token em Cache
-
-Autenticação com JWT
-
-XUnit para teste Unitário (Utilizei 2 testes apenas para demonstração a implementação)
-
-Moq para "Mockar" objetos
-
-Serilog para registro de Log da Aplicação
-
-Swashbuckle Swagger como expositor da API
-
-### Rodando o Projeto
-
-Primeiro passo é a configuração das strings de conexão no arquivo appsettings.json
-Utilizei um banco de dados para a Aplicação e outro para a Autenticação.
-
+First step is to configure the connection strings in the `appsettings.json` file. I used one database for the application and another for authentication.
 
 ```
-Strings de Conexão
-      BaseIdentity: String para a Autenticação
-      App: String para a Aplicação
-      ConexaoRedis: String para armazenamento do token em Cache
+Connection Strings:
+BaseIdentity: String for Authentication
+App: String for the Application
+ConexaoRedis: String for token storage in Cache
 ```  
 
       
 ```
-Exemplo: Eu utilizei o banco local do SQL Server  
+Example: I used the local SQL Server database  
 ConnectionStrings: {
     "BaseIdentity": "Server=(localdb)\\MSSQLLocalDB;Initial Catalog=IdentityLocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False",  
     "App": "Server=(localdb)\\MSSQLLocalDB;Initial Catalog=AppDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False",
@@ -48,32 +39,27 @@ ConnectionStrings: {
 
 ```
 
-Como eu utilizei o Redis, é necessário apontar a string de conexão para um server Redis. Caso queira rodar o server localmente siga as instruções abaixo.
+Since I used Redis, you need to point the connection string to a Redis server. If you want to run the server locally, follow the instructions below.
 
-### Configurando o REDIS
+### Configuring REDIS
 
-Passo a Passo
+Step by Step:
 
-Passo 1
+1. **Download Redis**
 
-Download redis
+   [Redis Download Link](https://github.com/microsoftarchive/redis/releases/tag/win-3.2.100)
 
-https://github.com/microsoftarchive/redis/releases/tag/win-3.2.100
+2. **Unzip the File**
 
+   If you download the zip file, unzip it to `C:\Redis`.
 
-Passo 2
+3. **Start redis-server**
 
-Se baixar o arquivo zip e descompactar para C:\Redis
+   A command prompt window will open with the message "The server is now ready to accept connections on port 6379."
 
-Passo 3
-
-Start redis-server
-
-Uma tela do prompt de comando irá abrir com a mensagem "The server is now ready to accept connections on port 6379"
-
-Dica: Se o comando não funcionar no prompt de comando, será necessário adicionar um valor na Variavel de Ambiente "Path" com o caminho dos arquivos "C:\Redis"
+**Tip:** If the command doesn't work in the command prompt, you need to add a value to the "Path" Environment Variable with the path to the files "C:\Redis".
 
 
-### Feito isso o projeto deverá rodar sem problemas.
+### After this, the project should run without problems.
 
 
